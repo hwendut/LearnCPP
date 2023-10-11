@@ -105,3 +105,57 @@ while (*condition*)
 **赋值**（assignment）
 
 **前缀递增运算符**（++）
+
+1.4.2 for语句
+
+每个for语句都包含两部分：循环头和循环体
+
+循环头控制循环体的执行次数，它由三部分组成：一个初始化语句（*init-statement*）、一个循环条件（*condition*）以及一个表达式（*expression*）
+
+初始化语句中定义的变量仅在for循环内部存在，它在循环结束之后是不能使用的
+
+> The main difference between the `for`'s and the `while`'s is a matter of pragmatics: we usually use `for` when there is a known number of iterations, and use `while` constructs when the number of iterations in not known in advance. The `while` vs `do ... while` issue is also of pragmatics, the second executes the instructions once at start, and afterwards it behaves just like the simple while.
+
+for与while和do-while的比较https://stackoverflow.com/questions/2950931/for-vs-while-in-c-programming
+
+### 1.4.3 读取数量不定的输入数据
+
+```
+while (std::cin >> value)
+```
+
+此循环实际上检测的是std::cin，其效果是检测流的状态，如果流是有效的，即流未遇到错误，那么检测成功。当遇到**文件结束符**（end-of-file），或遇到一个无效输入时（例如读入的值不是一个整数），istream对象的状态会变为无效，处于无效状态的istream对象会使条件变为假
+
+Windows中输入文件结束符的方式是敲Ctrl+Z
+
+UNIX和Mac OS X系统中，是Ctrl+D
+
+> 编辑器可以检查**形式**（form）上的错误
+>
+> **语法错误**（syntax error）
+>
+> **类型错误**（type error）
+>
+> **声明错误**（declaration error）
+>
+> **编辑-编译-调试**（edit-compile-debug）
+
+### 1.4.4 if语句
+
+**相等运算符**（==）
+
+> C++程序的缩进与格式，不存在唯一正确，但要保持一致性
+>
+> 左花括号必须是main的形参列表后第一个非空、非注释的字符
+
+## 1.5 类简介
+
+**数据结构**（data structure）
+
+**类**（class），一个类定义了一个类型，以及与其关联的一组操作
+
+**类类型**（class type）
+
+通常使用.h作为头文件的后缀，标准库文件通常不带后缀
+
+> 使用文件重定向
